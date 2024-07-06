@@ -5,7 +5,7 @@ const gmailButton = document.querySelector('#gmail_button')
 const gmailResult = document.querySelector('#gmail_result')
 
 
-
+// 
 const regExp = /^[\w]+@gmail\.com$/
 
 gmailButton.onclick = () => {
