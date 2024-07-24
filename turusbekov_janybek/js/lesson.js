@@ -111,4 +111,50 @@ convertor(eurInput, somInput, usdInput)
 
 // KISS-keep it simple, stupid
 
-// SOLID
+// SOLID 
+
+
+/// card switcher
+
+const cardBlock =  document.querySelector('.card')
+const btnNext= document.querySelector('#btn-next')
+const btnPrev= document.querySelector('#btn-prev')
+
+let cardId = 1
+
+const getRequestFetch = async ()=>{
+    try{
+        const switcherResponse = await fetch(`https://jsonplaceholder.typicode.com/todos/${cardId}`)
+        const switcherData = await switcherResponse.json()
+        cardBlock.innerHTML = `
+         <p>${switcherData.title}</p>
+            <p style = "color: ${switcherData.completed ? 'green' : 'red'}"> ${switcherData.completed}</p>
+            <span>${switcherData.id}</span>
+        `
+        }catch(error){
+        console.log(error)
+    }
+    }
+// btnNext.onclick = () => {
+//     count++
+//     fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+//     .then((response) => response.json())
+//     .then((data) => {
+//         cardBlock.innerHTML = `
+//         <p>${data.title}</p>
+//         <p style="color: ${data.completed ? 'green': 'red'} ">${data.completed}</p>
+//         <span>${data.id}</span>
+//         `
+//     })
+// }
+
+
+getRequestFetch(cardId)
+btnNext.onclick=()=>{
+    cardId < 200 ? cardId++ : cardId = 1
+    getRequestFetch(cardId)
+}
+btnPrev.onclick=()=>{
+    cardId > 1 ? cardId-- : cardId = 200 
+    getRequestFetch(cardId)
+}
