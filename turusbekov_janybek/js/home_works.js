@@ -1,7 +1,7 @@
 let gmailInput = document.querySelector("#gmail_input");
 let gmailBtn = document.querySelector("#gmail_button");
 let gmailRes = document.querySelector("#gmail_result");
-const regExp = /^[\w]+@gmail\.com$/
+const regExp = /^[0-9a-zA-Z._%+-]+@gmail\.com$/
 
 gmailBtn.onclick = ()=>{
     if(regExp.test(gmailInput.value)){
@@ -63,3 +63,4 @@ const resetFunc = ()=>{
     document.querySelector("#seconds").innerHTML = start
     startBtn.disabled = false
 }
+

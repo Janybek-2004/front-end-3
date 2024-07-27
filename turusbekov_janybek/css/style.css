@@ -2,7 +2,7 @@
 
 .header {
     height: 80px;
-    background: #2c2d2f;
+    background: transparent;
     display: flex;
     align-items: center;
     width: 100%;
@@ -33,7 +33,9 @@
     border-radius: 5px;
     cursor: pointer;
 }
-
+.block_user{
+    margin-top: 100px;
+}
 /* HEADER MENU */
 
 .menu {

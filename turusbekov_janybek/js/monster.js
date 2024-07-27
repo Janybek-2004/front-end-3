@@ -227,21 +227,21 @@ window.onload = function () {
         mouse.y = false;
     }
 
-    canvas.addEventListener(
-        "mousedown",
-        function () {
-            clicked = true;
-        },
-        false
-    );
+    // canvas.addEventListener(
+    //     "mousedown",
+    //     function () {
+    //         clicked = true;
+    //     },
+    //     false
+    // );
 
-    canvas.addEventListener(
-        "mouseup",
-        function () {
-            clicked = false;
-        },
-        false
-    );
+    // canvas.addEventListener(
+    //     "mouseup",
+    //     function () {
+    //         clicked = false;
+    //     },
+    //     false
+    // );
 
     function loop() {
         window.requestAnimFrame(loop);
